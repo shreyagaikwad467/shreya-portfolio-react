@@ -1,0 +1,629 @@
+/* ========================================= */
+/* ============ WINE GAME ================== */
+/* ========================================= */
+
+.wine-game-section {
+    width: 235px;
+
+    flex-shrink: 0;
+
+    font-family: "Times New Roman", serif;
+
+    color: #FFFFFF;
+}
+
+
+/* ========================================= */
+/* ============== GAME CARD ================ */
+/* ========================================= */
+
+.wine-game-card {
+    position: relative;
+
+    width: 235px;
+    min-height: 185px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    background-color: rgba(18, 18, 18, 0.92);
+
+    border: 1px solid rgba(232, 201, 214, 0.12);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.35),
+        0 0 25px rgba(104, 40, 71, 0.08);
+
+    overflow: hidden;
+}
+
+
+/* ========================================= */
+/* ================ INTRO =================== */
+/* ========================================= */
+
+.intro-card {
+
+    min-height: 185px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.wine-game-icon {
+
+    font-size: 35px;
+
+    margin-bottom: 7px;
+
+    animation: grapeFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes grapeFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+.intro-card h2,
+.finished-card h2 {
+
+    margin: 0 0 7px;
+
+    font-size: 23px;
+
+    font-weight: 400;
+
+    color: #E8C9D6;
+}
+
+
+.intro-card p,
+.finished-card p {
+
+    margin: 0 0 15px;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* ========================================= */
+/* ================ BUTTON ================= */
+/* ========================================= */
+
+.wine-game-button {
+
+    padding: 8px 19px;
+
+    border: 1px solid #682847;
+
+    border-radius: 20px;
+
+    background-color: #682847;
+
+    color: #FFFFFF;
+
+    font-family: "Times New Roman", serif;
+
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.wine-game-button:hover {
+
+    background-color: #7D3457;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(104, 40, 71, 0.35);
+}
+
+
+/* ========================================= */
+/* ============== GAME HEADER ============== */
+/* ========================================= */
+
+.wine-game-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 8px;
+}
+
+
+.wine-game-label {
+
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 8px;
+
+    letter-spacing: 1.8px;
+
+    color: #E8C9D6;
+}
+
+
+.wine-game-header h2 {
+
+    margin: 0;
+
+    font-size: 19px;
+
+    font-weight: 400;
+}
+
+
+.grape-counter {
+
+    min-width: 42px;
+
+    padding: 6px 7px;
+
+    border-radius: 8px;
+
+    background-color: rgba(104, 40, 71, 0.18);
+
+    border: 1px solid rgba(104, 40, 71, 0.4);
+
+    color: #E8C9D6;
+
+    text-align: center;
+
+    font-size: 12px;
+}
+
+
+/* ========================================= */
+/* ============ INSTRUCTION ================ */
+/* ========================================= */
+
+.wine-game-instruction {
+
+    margin: 7px 0 11px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 11px;
+}
+
+
+/* ========================================= */
+/* ================ VINEYARD =============== */
+/* ========================================= */
+
+.vineyard {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 145px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #171317 0%,
+            #1B1519 55%,
+            #21151B 100%
+        );
+
+    border: 1px solid rgba(232, 201, 214, 0.07);
+}
+
+
+.vineyard-sky {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(232, 201, 214, 0.08),
+            transparent 25%
+        );
+
+    pointer-events: none;
+}
+
+
+/* ========================================= */
+/* ================= VINE ================== */
+/* ========================================= */
+
+.vine {
+
+    position: absolute;
+
+    top: -8px;
+    left: 8%;
+
+    width: 84%;
+    height: 20px;
+
+    border-top: 3px solid #3D5938;
+
+    border-radius: 50%;
+}
+
+
+.vine::before,
+.vine::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    width: 45%;
+    height: 65px;
+
+    border-left: 3px solid #3D5938;
+
+    border-radius: 50%;
+}
+
+
+.vine::before {
+
+    left: 10%;
+
+    transform: rotate(7deg);
+}
+
+
+.vine::after {
+
+    right: 10%;
+
+    transform: rotate(-7deg);
+}
+
+
+/* ========================================= */
+/* ================ LEAVES ================= */
+/* ========================================= */
+
+.vine-leaf {
+
+    position: absolute;
+
+    width: 18px;
+    height: 10px;
+
+    background-color: #496844;
+
+    border-radius: 100% 0 100% 0;
+}
+
+
+.leaf-one {
+
+    left: 15%;
+    top: 15px;
+
+    transform: rotate(25deg);
+}
+
+
+.leaf-two {
+
+    left: 52%;
+    top: 8px;
+
+    transform: rotate(-25deg);
+}
+
+
+.leaf-three {
+
+    right: 14%;
+    top: 17px;
+
+    transform: rotate(35deg);
+}
+
+
+/* ========================================= */
+/* ================= GRAPE ================= */
+/* ========================================= */
+
+.grape {
+
+    position: absolute;
+
+    z-index: 3;
+
+    width: 35px;
+    height: 35px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.3s ease;
+}
+
+
+.grape:hover {
+
+    transform:
+        translate(-50%, -50%)
+        scale(1.2);
+}
+
+
+.grape:active {
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.9);
+}
+
+
+.grape.picked {
+
+    pointer-events: none;
+
+    animation:
+        grapePicked 0.45s ease forwards;
+}
+
+
+@keyframes grapePicked {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: 1;
+    }
+
+    60% {
+
+        transform:
+            translate(-50%, -70%)
+            scale(1.15);
+
+        opacity: 0.8;
+    }
+
+    100% {
+
+        transform:
+            translate(-50%, -100%)
+            scale(0);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* ========================================= */
+/* ============== GROUND =================== */
+/* ========================================= */
+
+.vineyard-ground {
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 25%;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(62, 45, 43, 0.9),
+            rgba(62, 45, 43, 0.25)
+        );
+
+    border-top:
+        1px solid
+        rgba(232, 201, 214, 0.06);
+}
+
+
+/* ========================================= */
+/* ============== FINISHED ================= */
+/* ========================================= */
+
+.finished-card {
+
+    min-height: 230px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* ========================================= */
+/* ============== WINE GLASS =============== */
+/* ========================================= */
+
+.wine-glass {
+
+    position: relative;
+
+    width: 55px;
+    height: 85px;
+
+    margin-bottom: 8px;
+}
+
+
+.wine-glass-bowl {
+
+    position: absolute;
+
+    top: 0;
+    left: 7px;
+
+    width: 41px;
+    height: 47px;
+
+    border:
+        2px solid
+        rgba(255, 255, 255, 0.65);
+
+    border-top: none;
+
+    border-radius:
+        0 0 28px 28px;
+
+    overflow: hidden;
+}
+
+
+.wine-liquid {
+
+    position: absolute;
+
+    z-index: 1;
+
+    top: 23px;
+    left: 10px;
+
+    width: 37px;
+    height: 22px;
+
+    border-radius:
+        0 0 20px 20px;
+
+    background-color: #682847;
+
+    animation:
+        pourWine 1s ease forwards;
+}
+
+
+@keyframes pourWine {
+
+    from {
+        height: 0;
+        top: 45px;
+    }
+
+    to {
+        height: 22px;
+        top: 23px;
+    }
+
+}
+
+
+.wine-glass-stem {
+
+    position: absolute;
+
+    top: 46px;
+    left: 26px;
+
+    width: 2px;
+    height: 28px;
+
+    background-color:
+        rgba(255, 255, 255, 0.6);
+}
+
+
+.wine-glass-base {
+
+    position: absolute;
+
+    bottom: 3px;
+    left: 12px;
+
+    width: 31px;
+    height: 3px;
+
+    border-radius: 50%;
+
+    background-color:
+        rgba(255, 255, 255, 0.6);
+}
+
+
+/* ========================================= */
+/* ================ MOBILE ================= */
+/* ========================================= */
+
+@media (max-width: 700px) {
+
+    .wine-game-section {
+
+        width: min(280px, 100%);
+    }
+
+    .wine-game-card {
+
+        width: 100%;
+    }
+
+}

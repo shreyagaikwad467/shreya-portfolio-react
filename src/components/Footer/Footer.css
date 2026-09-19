@@ -1,0 +1,187 @@
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 35px 6%;
+    border-top: 1px solid rgba(232, 201, 214, 0.12);
+    background-color: #0A0809;
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+/* =========================
+   FOOTER CONTENT
+========================= */
+
+.footer-content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 15px;
+}
+
+/* =========================
+   FOOTER NAME
+========================= */
+
+.footer-name {
+    margin: 0;
+    font-family: var(--font-special);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--color-main-light);
+    text-align: left;
+    text-shadow:
+        0 0 6px rgba(232, 201, 214, 0.38),
+        0 0 15px rgba(232, 201, 214, 0.15);
+    animation: footerNameGlow 3s ease-in-out infinite;
+    transition: text-shadow 0.4s ease;
+}
+
+.footer-name:hover {
+    text-shadow:
+        0 0 9px rgba(232, 201, 214, 0.58),
+        0 0 22px rgba(104, 40, 71, 0.35);
+}
+
+@keyframes footerNameGlow {
+    0%,
+    100% {
+        text-shadow:
+            0 0 6px rgba(232, 201, 214, 0.38),
+            0 0 15px rgba(232, 201, 214, 0.15);
+    }
+
+    50% {
+        text-shadow:
+            0 0 9px rgba(232, 201, 214, 0.58),
+            0 0 19px rgba(232, 201, 214, 0.22);
+    }
+}
+
+/* =========================
+   FOOTER CENTER
+========================= */
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.footer-center p {
+    margin: 0;
+    font-family: var(--font-main);
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.back-to-top {
+    justify-self: end;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 17px;
+    border: 1px solid rgba(232, 201, 214, 0.18);
+    border-radius: 30px;
+    background-color: rgba(22, 13, 18, 0.85);
+    color: #E8C9D6;
+    font-family: var(--font-main);
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.back-to-top-arrow {
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover {
+    background-color: #682847;
+    border-color: #682847;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(104, 40, 71, 0.35);
+}
+
+.back-to-top:hover .back-to-top-arrow {
+    transform: translateY(-3px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+    .footer {
+        padding: 30px 5%;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .footer-name {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    .footer-center {
+        gap: 8px;
+    }
+
+    .footer-center p {
+        font-size: 15px;
+    }
+
+    .back-to-top {
+        margin-top: 5px;
+        justify-self: auto;
+        padding: 9px 15px;
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-name,
+    .back-to-top {
+        animation: none;
+        transition: none;
+    }
+
+    .back-to-top:hover {
+        transform: none;
+    }
+
+    .back-to-top:hover .back-to-top-arrow {
+        transform: none;
+    }
+}

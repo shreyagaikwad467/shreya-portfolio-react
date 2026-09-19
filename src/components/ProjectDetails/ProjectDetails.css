@@ -1,0 +1,581 @@
+/* =========================
+   PROJECT DETAILS PAGE
+========================= */
+
+.project-details-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 6% 100px;
+    background-color: var(--color-background);
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.project-details-container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* =========================
+   BACK TO PROJECTS
+========================= */
+
+.back-to-projects {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 50px;
+    padding: 10px 17px;
+    border: 1px solid rgba(232, 201, 214, 0.18);
+    border-radius: 30px;
+    background-color: rgba(22, 13, 18, 0.85);
+    color: #E8C9D6;
+    font-family: var(--font-main);
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.back-arrow {
+    font-size: 17px;
+    transition: transform 0.3s ease;
+}
+
+.back-to-projects:hover {
+    background-color: #682847;
+    border-color: #682847;
+    color: #FFFFFF;
+    transform: translateX(-3px);
+    box-shadow: 0 10px 30px rgba(104, 40, 71, 0.35);
+}
+
+.back-to-projects:hover .back-arrow {
+    transform: translateX(-3px);
+}
+
+/* =========================
+   PROJECT TITLE
+========================= */
+
+.project-detail-title {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 0 55px;
+    font-family: var(--font-special);
+    font-size: clamp(52px, 6vw, 78px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: #FFFFFF;
+}
+
+/* =========================
+   PROJECT SHOWCASE
+========================= */
+
+.project-showcase {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 75px;
+    align-items: start;
+}
+
+/* =========================
+   LEFT SIDEBAR
+========================= */
+
+.project-sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+    padding-top: 10px;
+}
+
+.project-info-block {
+    width: 100%;
+}
+
+.project-info-label {
+    margin: 0 0 13px;
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.project-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    color: #E8C9D6;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #E8C9D6;
+    box-shadow: 0 0 10px rgba(232, 201, 214, 0.5);
+}
+
+/* =========================
+   TECHNOLOGIES
+========================= */
+
+.project-sidebar-technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.project-sidebar-technology {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 13px;
+    border: 1px solid rgba(232, 201, 214, 0.16);
+    border-radius: 18px;
+    background-color: rgba(104, 40, 71, 0.12);
+    color: #E8C9D6;
+    font-family: var(--font-main);
+    font-size: 14px;
+}
+
+/* =========================
+   PROJECT MATERIALS
+========================= */
+
+.project-materials {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.project-material-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 15px;
+    box-sizing: border-box;
+    border: 1px solid rgba(232, 201, 214, 0.14);
+    border-radius: 10px;
+    background-color: rgba(18, 18, 18, 0.8);
+    color: #FFFFFF;
+    font-family: var(--font-main);
+    font-size: 15px;
+    text-decoration: none;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.project-material-link:hover {
+    background-color: rgba(104, 40, 71, 0.2);
+    border-color: rgba(232, 201, 214, 0.3);
+    transform: translateX(3px);
+}
+
+/* =========================
+   LAST UPDATED
+========================= */
+
+.project-last-updated {
+    margin: 0;
+    font-family: var(--font-main);
+    font-size: 15px;
+    color: #E8C9D6;
+}
+
+/* =========================
+   GITHUB
+========================= */
+
+.project-github-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 15px;
+    box-sizing: border-box;
+    border: 1px solid rgba(232, 201, 214, 0.14);
+    border-radius: 10px;
+    background-color: rgba(18, 18, 18, 0.8);
+    color: #FFFFFF;
+    font-family: var(--font-main);
+    font-size: 15px;
+    text-decoration: none;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.project-github-link:hover {
+    background-color: rgba(104, 40, 71, 0.2);
+    border-color: rgba(232, 201, 214, 0.3);
+    transform: translateX(3px);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.project-main-content {
+    width: 100%;
+}
+
+/* =========================
+   VIDEO WRAPPER
+========================= */
+
+.project-video-reveal {
+    width: 100%;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.project-detail-video {
+    width: 100%;
+    max-width: 720px;
+    margin-bottom: 42px;
+    overflow: hidden;
+    border: 1px solid rgba(232, 201, 214, 0.12);
+    border-radius: 16px;
+    background-color: #0A0A0A;
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.4),
+        0 0 35px rgba(104, 40, 71, 0.08);
+    aspect-ratio: 16 / 9;
+    box-sizing: border-box;
+}
+
+.project-detail-video video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* =========================
+   ABOUT THE PROJECT
+========================= */
+
+.project-description-section {
+    width: 100%;
+    max-width: 720px;
+    margin-bottom: 42px;
+}
+
+.project-description-label {
+    margin: 0 0 13px;
+    font-family: var(--font-main);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.75;
+    color: #E8C9D6;
+}
+
+.project-detail-description {
+    margin: 0;
+    font-family: var(--font-main);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+/* =========================
+   DETAILED PROJECT CONTENT
+========================= */
+
+.project-full-content {
+    width: 100%;
+    max-width: 720px;
+}
+
+.project-about-section {
+    width: 100%;
+    margin: 0 0 42px;
+}
+
+.project-about-section:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+.project-about-section h3 {
+    margin: 0 0 13px;
+    font-family: var(--font-main);
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.75;
+    color: #E8C9D6;
+}
+
+/* =========================
+   SECTION PARAGRAPHS
+========================= */
+
+.project-about-section p {
+    margin: 0;
+    font-family: var(--font-main);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+/* =========================
+   SECTION LISTS
+========================= */
+
+.project-about-section ul {
+    margin: 0;
+    padding-left: 22px;
+    font-family: var(--font-main);
+}
+
+.project-about-section li {
+    margin: 0 0 9px;
+    padding-left: 4px;
+    font-family: var(--font-main);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.project-about-section li:last-child {
+    margin-bottom: 0;
+}
+
+.project-about-section li::marker {
+    color: #E8C9D6;
+}
+
+/* =========================
+   PROJECT NOT FOUND
+========================= */
+
+.project-not-found {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    text-align: center;
+}
+
+.project-not-found h1 {
+    margin: 0;
+    font-family: var(--font-special);
+    font-size: 60px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+.project-not-found button {
+    padding: 10px 18px;
+    border: 1px solid rgba(232, 201, 214, 0.2);
+    border-radius: 10px;
+    background-color: #682847;
+    color: #FFFFFF;
+    font-family: var(--font-main);
+    font-size: 14px;
+    cursor: pointer;
+    transition:
+        background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.project-not-found button:hover {
+    background-color: #7A3154;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+    .project-details-page {
+        padding: 70px 5% 80px;
+    }
+
+    .back-to-projects {
+        margin-bottom: 40px;
+    }
+
+    .project-detail-title {
+        margin-bottom: 45px;
+        font-size: 60px;
+    }
+
+    .project-showcase {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .project-sidebar {
+        order: 2;
+        padding-top: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .project-main-content {
+        order: 1;
+    }
+
+    .project-detail-video {
+        max-width: 700px;
+        margin-bottom: 35px;
+    }
+
+    .project-description-section,
+    .project-full-content {
+        max-width: 700px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+    .project-details-page {
+        padding: 55px 5% 70px;
+    }
+
+    .back-to-projects {
+        margin-bottom: 35px;
+        padding: 9px 14px;
+        font-size: 13px;
+    }
+
+    .project-detail-title {
+        margin-bottom: 35px;
+        font-size: 45px;
+        line-height: 1.08;
+    }
+
+    .project-showcase {
+        gap: 40px;
+    }
+
+    .project-sidebar {
+        display: flex;
+        gap: 30px;
+    }
+
+    .project-detail-video {
+        margin-bottom: 30px;
+        border-radius: 13px;
+    }
+
+    .project-description-section {
+        margin-bottom: 32px;
+    }
+
+    .project-description-label,
+    .project-about-section h3 {
+        font-size: 16px;
+        line-height: 1.65;
+    }
+
+    .project-detail-description,
+    .project-about-section p,
+    .project-about-section li {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .project-about-section {
+        margin-bottom: 32px;
+    }
+
+    .project-about-section ul {
+        padding-left: 20px;
+    }
+
+    .project-about-section li {
+        padding-left: 3px;
+        margin-bottom: 8px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 420px) {
+    .project-details-page {
+        padding: 50px 5% 60px;
+    }
+
+    .back-to-projects {
+        margin-bottom: 30px;
+        padding: 8px 13px;
+        font-size: 12px;
+    }
+
+    .project-detail-title {
+        margin-bottom: 30px;
+        font-size: 39px;
+    }
+
+    .project-sidebar-technology {
+        font-size: 13px;
+    }
+
+    .project-description-label,
+    .project-about-section h3 {
+        font-size: 15px;
+    }
+
+    .project-detail-description,
+    .project-about-section p,
+    .project-about-section li {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .back-to-projects,
+    .project-material-link,
+    .project-github-link,
+    .project-not-found button {
+        transition: none;
+    }
+}

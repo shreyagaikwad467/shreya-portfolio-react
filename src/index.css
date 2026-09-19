@@ -1,0 +1,107 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-background);
+    color: var(--color-white);
+    overflow-x: hidden;
+}
+
+/* =========================
+   GLOBAL VARIABLES
+========================= */
+
+:root {
+    /* Fonts */
+    --font-main: "Andika", sans-serif;
+    --font-special: "Rouge Script", cursive;
+
+    /* Colors */
+    --color-main: #682847;
+    --color-main-hover: #7A3154;
+    --color-main-light: #E8C9D6;
+    --color-background: #10090D;
+    --color-background-soft: #120A0F;
+    --color-card: #160D12;
+    --color-white: #FFFFFF;
+    --color-text-secondary: #BDBDBD;
+    --color-border: rgba(232, 201, 214, 0.12);
+
+    /* Section spacing */
+    --section-padding-top: 90px;
+    --section-padding-bottom: 100px;
+}
+
+/* =========================
+   RESPONSIVE SPACING
+========================= */
+
+@media (max-width: 900px) {
+    :root {
+        --section-padding-top: 75px;
+        --section-padding-bottom: 85px;
+    }
+}
+
+@media (max-width: 600px) {
+    :root {
+        --section-padding-top: 60px;
+        --section-padding-bottom: 70px;
+    }
+}
+
+/* =========================
+   SPECIAL FONT
+========================= */
+
+.special-text {
+    font-family: var(--font-special);
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translate3d(0, 25px, 0);
+    transition:
+        opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

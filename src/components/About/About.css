@@ -1,0 +1,286 @@
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 100vh;
+    padding: var(--section-padding-top) 6% var(--section-padding-bottom);
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.about-heading {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.about-heading .section-label {
+    margin: 0 0 15px;
+    font-family: var(--font-special);
+    font-weight: 400;
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.1;
+    color: #FFFFFF;
+}
+
+.about-intro {
+    margin: 0;
+    font-family: var(--font-main);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #E8C9D6;
+}
+
+/* =========================
+   ABOUT CARD
+========================= */
+
+.about-card {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 50px;
+    padding: 35px;
+    border: 1px solid rgba(232, 201, 214, 0.12);
+    border-radius: 22px;
+    background-color: rgba(18, 18, 18, 0.9);
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(104, 40, 71, 0.08);
+    box-sizing: border-box;
+}
+
+/* =========================
+   PHOTO
+========================= */
+
+.about-photo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-photo img {
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 24px;
+    transition: transform 0.5s ease;
+}
+
+.about-photo img:hover {
+    transform: scale(1.03);
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.about-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.about-greeting {
+    margin: 0 0 15px;
+    font-family: var(--font-main);
+    font-size: 22px;
+    line-height: 1.5;
+    color: #FFFFFF;
+}
+
+.about-name {
+    font-family: var(--font-special);
+    font-weight: 400;
+    font-size: 38px;
+    color: #E8C9D6;
+    text-shadow:
+        0 0 8px rgba(232, 201, 214, 0.45),
+        0 0 18px rgba(104, 40, 71, 0.65),
+        0 0 32px rgba(104, 40, 71, 0.4);
+    transition:
+        text-shadow 0.3s ease,
+        color 0.3s ease;
+}
+
+.about-name:hover {
+    color: #FFFFFF;
+    text-shadow:
+        0 0 8px rgba(232, 201, 214, 0.7),
+        0 0 20px rgba(104, 40, 71, 0.85),
+        0 0 38px rgba(104, 40, 71, 0.6);
+}
+
+.about-description {
+    margin: 0 0 15px;
+    font-family: var(--font-main);
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.about-interests {
+    margin-top: 15px;
+    font-family: var(--font-main);
+    font-size: 15px;
+    line-height: 1.6;
+    color: #E8C9D6;
+}
+
+/* =========================
+   SMALLER SCREENS
+========================= */
+
+@media (max-width: 900px) {
+    .about {
+        min-height: auto;
+        padding: var(--section-padding-top) 5% var(--section-padding-bottom);
+    }
+
+    .about-card {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .about-photo {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .about-photo img {
+        width: 80%;
+        max-width: 280px;
+        height: auto;
+        border-radius: 24px;
+    }
+
+    .about-content {
+        width: 100%;
+    }
+
+    .about-description {
+        max-width: 100%;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+    .about {
+        padding: var(--section-padding-top) 5% var(--section-padding-bottom);
+    }
+
+    .about-heading .section-label {
+        font-size: 42px;
+    }
+
+    .about-intro {
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    .about-card {
+        gap: 25px;
+        padding: 22px 20px;
+        border-radius: 18px;
+    }
+
+    .about-photo img {
+        width: 70%;
+        max-width: 230px;
+        height: auto;
+        border-radius: 24px;
+    }
+
+    .about-greeting {
+        margin-bottom: 15px;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .about-name {
+        font-size: 33px;
+    }
+
+    .about-description {
+        margin-bottom: 15px;
+        font-size: 15.5px;
+        line-height: 1.55;
+    }
+
+    .about-interests {
+        margin-top: 15px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 420px) {
+    .about {
+        padding: var(--section-padding-top) 5% var(--section-padding-bottom);
+    }
+
+    .about-card {
+        gap: 22px;
+        padding: 20px 17px;
+    }
+
+    .about-photo img {
+        width: 65%;
+        max-width: 190px;
+        height: auto;
+        border-radius: 24px;
+    }
+
+    .about-heading .section-label {
+        font-size: 38px;
+    }
+
+    .about-intro {
+        font-size: 19px;
+    }
+
+    .about-greeting {
+        font-size: 18px;
+    }
+
+    .about-name {
+        font-size: 30px;
+    }
+
+    .about-description {
+        margin-bottom: 15px;
+        font-size: 14.5px;
+        line-height: 1.5;
+    }
+
+    .about-interests {
+        font-size: 13px;
+    }
+}
