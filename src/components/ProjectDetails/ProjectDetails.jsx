@@ -32,7 +32,9 @@ function ProjectDetails() {
         return (
             <main className="project-details-page">
                 <div className="project-not-found">
-                    <h1>Project not found</h1>
+                    <h1>
+                        Project not found
+                    </h1>
 
                     <button onClick={goBack}>
                         ← Back to Projects
@@ -45,6 +47,9 @@ function ProjectDetails() {
     return (
         <main className="project-details-page">
             <div className="project-details-container">
+
+                {/* Back to Projects */}
+
                 <div
                     className="scroll-reveal"
                     ref={backButtonRef}
@@ -57,9 +62,14 @@ function ProjectDetails() {
                             ←
                         </span>
 
-                        <span>Back to Projects</span>
+                        <span>
+                            Back to Projects
+                        </span>
                     </button>
                 </div>
+
+
+                {/* Project Title */}
 
                 <h1
                     className="project-detail-title scroll-reveal"
@@ -68,11 +78,20 @@ function ProjectDetails() {
                     {project.title}
                 </h1>
 
+
                 <div className="project-showcase">
+
+                    {/* =========================
+                        LEFT SIDEBAR
+                    ========================= */}
+
                     <aside
                         className="project-sidebar scroll-reveal"
                         ref={sidebarRef}
                     >
+
+                        {/* Status */}
+
                         <div className="project-info-block">
                             <p className="project-info-label">
                                 Status
@@ -86,6 +105,9 @@ function ProjectDetails() {
                                 </span>
                             </div>
                         </div>
+
+
+                        {/* Technologies */}
 
                         <div className="project-info-block">
                             <p className="project-info-label">
@@ -106,6 +128,9 @@ function ProjectDetails() {
                             </div>
                         </div>
 
+
+                        {/* Project Materials */}
+
                         {project.materials && (
                             <div className="project-info-block">
                                 <p className="project-info-label">
@@ -113,6 +138,7 @@ function ProjectDetails() {
                                 </p>
 
                                 <div className="project-materials">
+
                                     {project.materials.document01 && (
                                         <a
                                             href={
@@ -126,7 +152,9 @@ function ProjectDetails() {
                                                 Project Review - I
                                             </span>
 
-                                            <span>↗</span>
+                                            <span>
+                                                ↗
+                                            </span>
                                         </a>
                                     )}
 
@@ -143,7 +171,9 @@ function ProjectDetails() {
                                                 Specifications
                                             </span>
 
-                                            <span>↗</span>
+                                            <span>
+                                                ↗
+                                            </span>
                                         </a>
                                     )}
 
@@ -160,12 +190,44 @@ function ProjectDetails() {
                                                 Synopsis
                                             </span>
 
-                                            <span>↗</span>
+                                            <span>
+                                                ↗
+                                            </span>
                                         </a>
                                     )}
+
                                 </div>
                             </div>
                         )}
+
+
+                        {/* Certificate */}
+
+                        {project.certificate && (
+                            <div className="project-info-block">
+                                <p className="project-info-label">
+                                    Certificate
+                                </p>
+
+                                <a
+                                    href={project.certificate}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="project-certificate-link"
+                                >
+                                    <span>
+                                        View Certificate
+                                    </span>
+
+                                    <span>
+                                        ↗
+                                    </span>
+                                </a>
+                            </div>
+                        )}
+
+
+                        {/* GitHub */}
 
                         {project.github && (
                             <div className="project-info-block">
@@ -183,10 +245,15 @@ function ProjectDetails() {
                                         GitHub Repository
                                     </span>
 
-                                    <span>↗</span>
+                                    <span>
+                                        ↗
+                                    </span>
                                 </a>
                             </div>
                         )}
+
+
+                        {/* Last Updated */}
 
                         {project.lastUpdated && (
                             <div className="project-info-block">
@@ -199,27 +266,66 @@ function ProjectDetails() {
                                 </p>
                             </div>
                         )}
+
                     </aside>
 
+
+                    {/* =========================
+                        MAIN CONTENT
+                    ========================= */}
+
                     <div className="project-main-content">
-                        <div className="project-video-reveal">
-                            <div className="project-detail-video">
-                                <video
-                                    src={project.video}
-                                    autoPlay
-                                    muted
-                                    loop
-                                    playsInline
-                                    preload="auto"
-                                    controls={false}
-                                    onLoadedData={(event) => {
-                                        event.currentTarget
-                                            .play()
-                                            .catch(() => {});
-                                    }}
-                                />
+
+                        {/* Project Preview */}
+
+                        {project.status === "In Progress" ? (
+                            <div className="project-in-progress">
+                                <div className="in-progress-icon">
+                                    <i className="fa-solid fa-code"></i>
+                                </div>
+
+                                <p className="in-progress-label">
+                                    PROJECT IN PROGRESS
+                                </p>
+
+                                <h2>
+                                    Something exciting is being built.
+                                </h2>
+
+                                <p className="in-progress-description">
+                                    This project is currently under development.
+                                    Check back soon for the completed version.
+                                </p>
+
+                                <div className="in-progress-loader">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
                             </div>
-                        </div>
+                        ) : (
+                            <div className="project-video-reveal">
+                                <div className="project-detail-video">
+                                    <video
+                                        src={project.video}
+                                        autoPlay
+                                        muted
+                                        loop
+                                        playsInline
+                                        preload="auto"
+                                        controls={false}
+                                        onLoadedData={(event) => {
+                                            event.currentTarget
+                                                .play()
+                                                .catch(() => {});
+                                        }}
+                                    />
+                                </div>
+                            </div>
+                        )}
+
+
+                        {/* About the Project */}
 
                         <div
                             className="project-description-section scroll-reveal"
@@ -233,6 +339,9 @@ function ProjectDetails() {
                                 {project.description}
                             </p>
                         </div>
+
+
+                        {/* Detailed Project Content */}
 
                         {project.sections &&
                             project.sections.length > 0 && (

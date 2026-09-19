@@ -278,6 +278,118 @@
 }
 
 /* =========================
+   IN PROGRESS
+========================= */
+
+.project-in-progress {
+    width: 100%;
+    max-width: 720px;
+    min-height: 405px;
+    margin-bottom: 42px;
+    padding: 50px 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(232, 201, 214, 0.12);
+    border-radius: 16px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(104, 40, 71, 0.24) 0%,
+            rgba(104, 40, 71, 0.08) 42%,
+            rgba(10, 10, 10, 0.96) 100%
+        ),
+        #0A0A0A;
+    box-shadow:
+        0 20px 55px rgba(0, 0, 0, 0.4),
+        0 0 35px rgba(104, 40, 71, 0.1);
+    box-sizing: border-box;
+}
+
+.in-progress-icon {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(232, 201, 214, 0.2);
+    border-radius: 50%;
+    background-color: rgba(104, 40, 71, 0.18);
+    color: #E8C9D6;
+    font-size: 23px;
+    box-shadow:
+        0 0 25px rgba(104, 40, 71, 0.2);
+}
+
+.in-progress-label {
+    margin: 0 0 12px;
+    font-family: var(--font-main);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #E8C9D6;
+}
+
+.project-in-progress h2 {
+    max-width: 520px;
+    margin: 0;
+    font-family: var(--font-special);
+    font-size: clamp(34px, 4vw, 50px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: #FFFFFF;
+}
+
+.in-progress-description {
+    max-width: 500px;
+    margin: 18px 0 0;
+    font-family: var(--font-main);
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.in-progress-loader {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.in-progress-loader span {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #E8C9D6;
+    animation: progressPulse 1.4s ease-in-out infinite;
+}
+
+.in-progress-loader span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.in-progress-loader span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes progressPulse {
+    0%,
+    60%,
+    100% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-4px);
+    }
+}
+
+/* =========================
    ABOUT THE PROJECT
 ========================= */
 
@@ -453,9 +565,14 @@
         order: 1;
     }
 
-    .project-detail-video {
+    .project-detail-video,
+    .project-in-progress {
         max-width: 700px;
         margin-bottom: 35px;
+    }
+
+    .project-in-progress {
+        min-height: 394px;
     }
 
     .project-description-section,
@@ -494,9 +611,41 @@
         gap: 30px;
     }
 
-    .project-detail-video {
+    .project-detail-video,
+    .project-in-progress {
         margin-bottom: 30px;
         border-radius: 13px;
+    }
+
+    .project-in-progress {
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        padding: 30px 22px;
+    }
+
+    .in-progress-icon {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 17px;
+        font-size: 20px;
+    }
+
+    .in-progress-label {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .project-in-progress h2 {
+        font-size: 36px;
+    }
+
+    .in-progress-description {
+        margin-top: 14px;
+        font-size: 13px;
+    }
+
+    .in-progress-loader {
+        margin-top: 18px;
     }
 
     .project-description-section {
@@ -554,6 +703,18 @@
         font-size: 13px;
     }
 
+    .project-in-progress {
+        padding: 25px 18px;
+    }
+
+    .project-in-progress h2 {
+        font-size: 32px;
+    }
+
+    .in-progress-description {
+        font-size: 12px;
+    }
+
     .project-description-label,
     .project-about-section h3 {
         font-size: 15px;
@@ -577,5 +738,10 @@
     .project-github-link,
     .project-not-found button {
         transition: none;
+    }
+
+    .in-progress-loader span {
+        animation: none;
+        opacity: 0.6;
     }
 }
